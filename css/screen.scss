@@ -1,0 +1,74 @@
+---
+---
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+ }
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  background-color: white;
+  font-family: georgia, serif;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+// Type
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 24px; 
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 24px; 
+  text-align: center;
+  margin: 36px 0;
+}
+
+h3 {
+  font-weight: normal;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+p {
+  margin: 18px 0;
+
+  > code {
+    background-color: #fafafa;
+    padding: 3px;
+    font-family: monospace;
+  }
+}
+
+blockquote {
+  border-left: 2px solid #eee;
+  font-style: italic;
+  padding: 0 24px;
+}
+
+
+// Posts
+.post {
+  pre {
+    background-color: #fafafa;
+    border: 1px solid #f0f0f0;
+    font-size: 70%;
+    overflow: auto;
+    padding: 5px 10px;
+  }
+}

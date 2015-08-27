@@ -9,12 +9,14 @@
   </head>
   <body>
     <header class="header">
-      <div class="branding">
+    <div class="branding {{ page.category }}">
         <a href="http://devlocker.io" class="important">DevLocker</a>
         <span>/</span>
         <a href="/" class="sub">Blog</a>
+        <span>/</span>
+        <a href="{{ page.url }}">{{ page.category | capitalize }}</a>
       </div>
-      <div class="arrow-right"></div>
+      <div class="arrow-right {{ page.category }}"></div>
       <div class="right">
         <p class="category"><a href="#">Code</a></p>
         <p class="category"><a href="#">Design</a></p>

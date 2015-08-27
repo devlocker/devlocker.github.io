@@ -1,7 +1,7 @@
 ---
 ---
 $red: #CA483F;
-$cyan: #438D84;
+$green: #34A179;
 $violet: #5662B5;
 
 *, *:before, *:after {
@@ -35,12 +35,14 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 24px;
+  &.code { color: $red; }
+  &.operations { color: $green; }
+  &.tooling { color: $violet; }
 }
 
 h2 {
-  font-size: 24px;
-  text-align: center;
-  margin: 36px 0;
+  font-size: 20px;
+  margin: 18px 0;
 }
 
 h3 {
@@ -85,6 +87,10 @@ blockquote {
     justify-content: center;
     padding: 0 12px;
 
+    &.code { background-color: $red; }
+    &.operations { background-color: $green; }
+    &.tooling { background-color: $violet; }
+
     a {
       &:hover { color: #fff; }
     }
@@ -115,6 +121,10 @@ blockquote {
     border-top: 15px solid transparent;
     border-bottom: 17px solid transparent;
     border-left: 9px solid $red;
+
+    &.code { border-left-color: $red; }
+    &.operations { border-left-color: $green; }
+    &.tooling { border-left-color: $violet; }
   }
 
   .logo {
@@ -163,7 +173,7 @@ blockquote {
     font-weight: bold;
 
     &.code { color: $red; }
-    &.operations { color: $cyan; }
+    &.operations { color: $green; }
     &.tooling { color: $violet; }
   }
 
@@ -189,7 +199,7 @@ blockquote {
   pre {
     background-color: #fafafa;
     border: 1px solid #f0f0f0;
-    font-size: 70%;
+    font-size: 80%;
     overflow: auto;
     padding: 5px 10px;
   }

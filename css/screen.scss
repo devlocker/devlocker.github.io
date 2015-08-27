@@ -1,5 +1,9 @@
 ---
 ---
+$red: #CA483F;
+$cyan: #438D84;
+$violet: #5662B5;
+
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
@@ -26,15 +30,15 @@ body {
 // Type
 
 h1, h2, h3, h4, h5, h6 {
-  font-size: 24px; 
+  font-size: 24px;
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 24px;
 }
 
 h2 {
-  font-size: 24px; 
+  font-size: 24px;
   text-align: center;
   margin: 36px 0;
 }
@@ -50,8 +54,8 @@ p {
 
   > code {
     background-color: #fafafa;
-    padding: 3px;
     font-family: monospace;
+    padding: 3px;
   }
 }
 
@@ -61,8 +65,126 @@ blockquote {
   padding: 0 24px;
 }
 
+// Header
+.header {
+  align-items: center;
+  background-color: #eee;
+  border-bottom: 1px solid #ccc;
+  color: #fff;
+  display: flex;
+  font-family: arial;
+  font-size: 14px;
+  height: 35px;
+
+  .branding {
+    align-items: center;
+    background-color: $red;
+    color: #fff;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    padding: 0 12px;
+
+    a {
+      &:hover { color: #fff; }
+    }
+  }
+
+  .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+
+    a {
+      color: #333;
+    }
+  }
+
+  a {
+    color: #fff;
+    display: block;
+    font-family: monospace;
+    font-weight: bold;
+    padding: 0 6px;
+  }
+
+  .arrow-right {
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 17px solid transparent;
+    border-left: 9px solid $red;
+  }
+
+  .logo {
+    font-weight: bold;
+    font-size: 16px;
+    margin-right: 16px;
+  }
+
+  .category {
+    padding: 0 8px;
+  }
+}
+
+// Site
+.site {
+  margin: 96px auto;
+  width: 530px;
+  display: flex;
+  flex-direction: column;
+
+  .content {
+    flex: 1;
+  }
+}
 
 // Posts
+  a {
+    text-decoration: none;
+  }
+
+.posts {
+  .post {
+    margin: 36px 0;
+  }
+
+  small {
+    font-variant: small-caps;
+    letter-spacing: 1px;
+    font-family: arial;
+    line-height: 12px;
+    font-size: 13px;
+  }
+
+  .cat {
+    padding-left: 12px;
+    font-weight: bold;
+
+    &.code { color: $red; }
+    &.operations { color: $cyan; }
+    &.tooling { color: $violet; }
+  }
+
+  h2 {
+    font-size: 20px;
+    margin: 0px 0px;
+    padding: 0;
+    text-align: left;
+
+    a {
+      color: #333;
+    }
+  }
+
+  p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+
 .post {
   pre {
     background-color: #fafafa;
@@ -70,5 +192,31 @@ blockquote {
     font-size: 70%;
     overflow: auto;
     padding: 5px 10px;
+  }
+}
+
+
+.footer {
+  border-top: 1px solid #ccc;
+  color: #888;
+  display: flex;
+  font-family: arial;
+  font-size: 12px;
+  margin: 32px 0 32px 0px;
+  padding: 32px 0 0 0;
+  width: 530px;
+
+  ul {
+    margin: 0 56px 0 0;
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  p {
+    font-weight: 600;
+    margin-bottom: 4px;
   }
 }

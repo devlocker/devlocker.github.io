@@ -1,18 +1,34 @@
 <html> 
   <head>
-     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-     <title>{{ page.title }}</title>
-     <meta name="author" content="DevLocker" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>{{ page.title }}</title>
+    <meta name="author" content="DevLocker" />
 
-     <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
-     <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+    <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+    <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
   </head>
   <body>
-    <header>
+    <header class="header">
+      <div class="branding">
+        <a href="http://devlocker.io" class="important">DevLocker</a>
+        <span>/</span>
+        <a href="/" class="sub">Blog</a>
+      </div>
+      <div class="arrow-right"></div>
+      <div class="right">
+        <p class="category"><a href="#">Code</a></p>
+        <p class="category"><a href="#">Design</a></p>
+        <p class="category"><a href="#">Tooling</a></p>
+        <p class="category"><a href="#">Product</a></p>
+        <p class="category"><a href="#">Operations</a></p>
+      </div>
     </header>
 
     <div class="site">
-      {{ content }}
+      <div class="content">
+        {{ content }}
+      </div>
+      {% include footer.html %}
     </div>
   </body>
 </html>

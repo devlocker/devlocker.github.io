@@ -17,7 +17,7 @@ Post.where(type: "code").map(&:user_id).uniq.count
 => 3
 ```
 
-I have a Post class which has a "type" string column, a "user_id", and a "posted_on" date. I need to find posts with type "code", distinct them on the column user_id, and get the count of that, all the while keeping the collection of records around for further filtering on the posted_on date. I started with some straightforward queries:
+I have a Post class which has a "type" string column, a "user_id", and a "posted_on" date. I need to find posts with type "code", distinct them on the column user_id, and get the count of that, all while keeping the collection of records around for further filtering on the posted_on date. I started with some straightforward queries:
 
 ```
 Post.where(type: "code").select("distinct on (user_id) *")

@@ -2,6 +2,7 @@
 layout: post
 title: Useful Vim Settings to Edit Markdown
 category: tooling
+author: patrick
 ---
 
 Here's some tips for improving your Vim setup to edit Markdown files.

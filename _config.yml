@@ -1,2 +1,13 @@
 markdown: rdiscount
 pygments: true
+
+authors:
+  patrick:
+    display_name: Patrick Koperwas
+    description: Web developer based in Seattle. Working mostly with Rails / Javascript.  Loves donuts, animated gifs, Vim and wearing slippers while working.
+  matt:
+    display_name: Matt Casper
+  hinrichs:
+    display_name: Michael Hinrichs
+  stock:
+    display_name: Michael Stock

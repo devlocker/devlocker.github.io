@@ -2,10 +2,11 @@
 layout: post
 title: Counting ActiveRecord Objects
 category: code
+author: matt
 ---
 Recently, I found myself needing to DISTINCT a collection of records by a column, and then get a count of the filtered records. I also needed the records later on for more filtering, so I needed the full records rather than a single column. It sounds like it should be pretty straightforward:
 
-# The Scenario
+## The Scenario
 
 ```
 # Halfway there
@@ -54,7 +55,7 @@ Post.where(type: "code").select("distinct on (user_id) *").length
 
 And we get the right number!
 
-# So what's going on here?
+## So what's going on here?
 
 As it turns out, ActiveRecord::Associations::AssociationCollection#size has two different behaviors. If the collection is already loaded, then it just calls `collection.size`. If the collection is not loaded, then it executes a `SELECT COUNT(*)` query.
 In our case, our collection isn't loaded yet, so `size` was generating a COUNT query. If you look at the actual SQL that our first `size` query generates, you'll notice that it ignores our `select("distinct on (user_id) *")`.

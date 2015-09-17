@@ -1,8 +1,11 @@
 ---
 ---
+
 $red: #CA483F;
 $green: #34A179;
 $violet: #5662B5;
+
+$site-width: 660px;
 
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
@@ -23,8 +26,8 @@ body {
   -webkit-font-smoothing: antialiased;
   background-color: white;
   font-family: georgia, serif;
-  font-size: 16px;
-  line-height: 28px;
+  font-size: 18px;
+  line-height: 30px;
 }
 
 // Type
@@ -141,7 +144,7 @@ blockquote {
 // Site
 .site {
   margin: 96px auto;
-  width: 530px;
+  width: $site-width;
   display: flex;
   flex-direction: column;
 
@@ -205,6 +208,11 @@ blockquote {
   }
 }
 
+.about-author {
+  border-top: 1px solid #ccc;
+  margin-top: 32px;
+  padding: 32px 0 0 0;
+}
 
 .footer {
   border-top: 1px solid #ccc;
@@ -214,7 +222,7 @@ blockquote {
   font-size: 12px;
   margin: 32px 0 32px 0px;
   padding: 32px 0 0 0;
-  width: 530px;
+  width: $site-width;
 
   ul {
     margin: 0 56px 0 0;

@@ -1,0 +1,83 @@
+---
+---
+
+$red: #CA483F;
+
+html {
+  font-family: "Source Code Pro";
+  font-size: 14px;
+}
+
+.header {
+  border-top: 4px solid $red;
+  width: 95%;
+  margin: 24px auto;
+
+  .menu {
+    display: flex;
+    color: #888;
+    margin: 12px 0;
+
+    > div {
+      margin-right: 24px;
+    }
+
+    a {
+      color: #888;
+      text-decoration: none;
+
+      &:hover { color: $red; }
+    }
+
+    .right {
+      margin-left: auto;
+      margin-right: 0;
+    }
+  }
+}
+
+.content {
+  width: 450px;
+  margin: 0 auto;
+
+  .hero {
+    font-size: 56px;
+    font-weight: 700;
+    margin: 144px 0;
+    text-align: center;
+  }
+
+  .hero-subtext {
+    color: #555;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 12px 0;
+  }
+}
+
+.call-to-action-prompt {
+  margin-bottom: 12px;
+  font-style: italic;
+}
+
+.call-to-action {
+  border-radius: 2px;
+  border: 1px solid #ddd;
+  color: #000;
+  display: block;
+  margin: 0 auto 144px auto;
+  padding: 12px;
+  text-align: center;
+  text-decoration: none;
+  width: 75%;
+
+  &:hover {
+    background-color: #fafafa;
+    border-color: #ccc;
+  }
+}
+
+p {
+  text-align: center;
+  margin-bottom: 48px;
+}

@@ -1,15 +1,24 @@
 ---
-layout: default
-title: DevLocker Blog
+layout: homepage
+title: DevLocker
 ---
-<section class="home">
-<h1>Latest Posts</h1>
 
-<section class="posts">
-  {% for post in site.posts %}
-  <div class="post">
-    <small>{{ post.date | date: "%-d %B, %Y" }} <span class="cat {{post.category}}">{{ post.category }}</span></small>
-    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-  </div>
-  {% endfor %}
-</section>
+<h1 class="hero">
+  DevLocker
+  <p class="hero-subtext">
+    Organize all of your <strong>damn</strong> applications.
+  </p>
+</h1>
+
+<p class="call-to-action-prompt"> > Would you like to try?</p>
+<a href="http://devlocker.io/signup" class="call-to-action">Yes, that sounds nice</a>
+
+<p>
+  Connect the applications you use everyday. See all of your data in one place,
+  on one screen. Doesn't matter if its a calender or a project management tool.
+  We'll integrate with it. Hopefully.
+</p>
+
+<p>It's also completely free and open-source. </p>
+
+<p>Also, read our <a href="/blog">blog</a>. Its pretty okay.</p>

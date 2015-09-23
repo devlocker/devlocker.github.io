@@ -21,7 +21,7 @@ The more times the code can run within the time frame, the more efficient it is.
 
 After pulling together our file reading candidates, our benchmark looked like this:
 
-```
+{% highlight ruby %}
 require 'benchmark/ips'
 
 Benchmark.ips do |x|
@@ -49,7 +49,7 @@ Benchmark.ips do |x|
 
   x.compare!
 end
-```
+{% endhighlight %}
 
 Some notes on `IO#seek`: It takes two arguments - a starting place in the file, and the number of bytes to search forward.
 You can also pass a few different constants as the second argument, `IO::SEEK_END` tells it to seek to the end of the file.
@@ -59,7 +59,7 @@ we set the starting point to be the last 2000 lines (in bytes), or the size of t
 
 Now that we know how `IO#seek` works, the results probably won't surprise you:
 
-```
+{% highlight ruby %}
 - mattcasper code/devlocker (master) $ ruby benchmark.rb
 Calculating -------------------------------------
                seek:   323.000  i/100ms
@@ -80,14 +80,14 @@ Comparison:
        io.readlines::       39.7 i/s - 51.14x slower
           each_line::       39.5 i/s - 51.44x slower
                to_a::       39.0 i/s - 52.17x slower
-```
+{% endhighlight %}
 
 `IO#seek` was the clear and indisputable winner. This is because unlike all of the other file reading methods, it only loads the portion of the file that you ask for, which you can then read from. Every other method loads the whole file, and then either reads the whole file or filters it. But because `IO#seek` only deals in bytes, not lines,
 how do we ensure that we get the last 2000 lines of the file?
 
 The answer is we can't be entirely sure, without going through every line in the file and getting the average line size. That sort of defeats the purpose of doing efficient file reads, so we came up with something close enough. We took a day's worth of server logs and found out the average line size, and used that to come up with a number that on average represented 2000 lines. In the end, the code turned out almost exactly like the benchmark (with some comments):
 
-```
+{% highlight ruby %}
   def read
     # Returns the last 520,000 bytes of a file, approximately 2000 lines
     File.open(pathname) do |f|
@@ -97,6 +97,6 @@ The answer is we can't be entirely sure, without going through every line in the
       f.read
     end
   end
-```
+{% endhighlight %}
 
 The Ruby `IO` class (which File relies on) has a bunch of other cool methods, so if you're ever struggling to get performant IO, make sure to poke around in there!

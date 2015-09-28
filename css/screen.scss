@@ -85,33 +85,12 @@ blockquote {
   align-items: center;
   display: flex;
   height: 65px;
-  width: $site-width;
   margin: 0 auto;
+  width: $site-width;
 
-  .branding {
-    align-items: center;
-    display: flex;
-    height: 100%;
-    justify-content: center;
-
-    &.code       { color: $red; }
-    &.operations { color: $green; }
-    &.tooling    { color: $violet; }
-
-    a {
-    }
-  }
-
-  .right {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    margin-left: auto;
-
-    a {
-      color: $black;
-    }
-  }
+  &.code       { color: $red; }
+  &.operations { color: $green; }
+  &.tooling    { color: $violet; }
 
   a {
     color: $black;
@@ -122,27 +101,6 @@ blockquote {
     &:first-child {
       padding-left: 0;
     }
-  }
-
-  .arrow-right {
-    border-bottom: 17px solid transparent;
-    border-left: 9px solid $red;
-    border-top: 15px solid transparent;
-    height: 0;
-    width: 0;
-
-    &.code       { border-left-color: $red; }
-    &.operations { border-left-color: $green; }
-    &.tooling    { border-left-color: $violet; }
-  }
-
-  .logo {
-    font-weight: bold;
-    margin-right: 16px;
-  }
-
-  .category {
-    padding: 0 8px;
   }
 }
 

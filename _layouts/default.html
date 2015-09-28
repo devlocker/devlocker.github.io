@@ -9,12 +9,10 @@
     <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
   </head>
   <body>
-    <header class="header">
-      <div class="branding {{ page.category }}">
-        <a href="/blog" class="sub">BLOG</a>
-        <span>|</span>
-        <a href="{{ page.url }}">{{ page.category | upcase }} - {{page.title}}</a>
-      </div>
+    <header class="header {{ page.category }}">
+      <a href="/blog" class="sub">BLOG</a>
+      <span>|</span>
+      <a href="{{ page.url }}">{{ page.category | upcase }} - {{page.title}}</a>
     </header>
 
     <div class="site">

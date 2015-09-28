@@ -2,21 +2,22 @@
 ---
 
 // Colors
-$black:  #333;
-$gray:   #888;
-$green:  #34a179;
-$red:    #ca483f;
-$violet: #5662b5;
-$white:  #fff;
+$black:      #333;
+$gray-light: #eee;
+$gray:       #888;
+$green:      #34a179;
+$red:        #ca483f;
+$violet:     #5662b5;
+$white:      #fff;
 
 // Specific Colors
 $header-bg-color: #eee;
 $border-color: #ccc;
 
 // Sizing
-$base-font-size: 14px;
-$line-height: 30px;
-$site-width: 660px;
+$base-font-size: 13px;
+$line-height: 28px;
+$site-width: 600px;
 
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
@@ -53,8 +54,9 @@ h1 {
 }
 
 h2 {
-  font-size: 20px;
-  margin: 36px 0 18px 0;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 36px 0 36px 0;
 }
 
 h3 {
@@ -67,8 +69,7 @@ p {
   margin: 18px 0;
 
   > code {
-    background-color: $black;
-    color: $white;
+    background-color: $gray-light;
     padding: 3px;
   }
 }
@@ -149,7 +150,7 @@ blockquote {
 // Site
 .site {
   margin: 96px auto;
-  width: $site-width;
+  max-width: $site-width;
   display: flex;
   flex-direction: column;
 
@@ -200,11 +201,15 @@ blockquote {
 }
 
 .post {
+  .highlight {
+    margin: 24px 0;
+  }
+
   pre {
     background-color: #fafafa;
     border: 1px solid #f0f0f0;
-    font-size: 80%;
     overflow: auto;
+    font-size: 12px;
     padding: 5px 10px;
   }
 }

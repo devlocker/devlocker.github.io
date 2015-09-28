@@ -83,27 +83,22 @@ blockquote {
 // Header
 .header {
   align-items: center;
-  background-color: $header-bg-color;
-  border-bottom: 1px solid $border-color;
-  color: $white;
   display: flex;
-  height: 35px;
+  height: 65px;
+  width: $site-width;
+  margin: 0 auto;
 
   .branding {
     align-items: center;
-    background-color: $red;
-    color: $white;
     display: flex;
     height: 100%;
     justify-content: center;
-    padding: 0 12px;
 
-    &.code       { background-color: $red; }
-    &.operations { background-color: $green; }
-    &.tooling    { background-color: $violet; }
+    &.code       { color: $red; }
+    &.operations { color: $green; }
+    &.tooling    { color: $violet; }
 
     a {
-      &:hover { color: $white; }
     }
   }
 
@@ -119,10 +114,14 @@ blockquote {
   }
 
   a {
-    color: $white;
+    color: $black;
     display: block;
     font-weight: bold;
     padding: 0 6px;
+
+    &:first-child {
+      padding-left: 0;
+    }
   }
 
   .arrow-right {
@@ -149,7 +148,7 @@ blockquote {
 
 // Site
 .site {
-  margin: 96px auto;
+  margin: 54px auto;
   max-width: $site-width;
   display: flex;
   flex-direction: column;

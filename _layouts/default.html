@@ -10,20 +10,10 @@
   </head>
   <body>
     <header class="header">
-    <div class="branding {{ page.category }}">
-        <a href="http://devlocker.io" class="important">DevLocker</a>
-        <span>/</span>
-        <a href="/blog" class="sub">Blog</a>
-        <span>/</span>
-        <a href="{{ page.url }}">{{ page.category | capitalize }}</a>
-      </div>
-      <div class="arrow-right {{ page.category }}"></div>
-      <div class="right">
-        <p class="category"><a href="#">Code</a></p>
-        <p class="category"><a href="#">Design</a></p>
-        <p class="category"><a href="#">Tooling</a></p>
-        <p class="category"><a href="#">Product</a></p>
-        <p class="category"><a href="#">Operations</a></p>
+      <div class="branding {{ page.category }}">
+        <a href="/blog" class="sub">BLOG</a>
+        <span>|</span>
+        <a href="{{ page.url }}">{{ page.category | upcase }} - {{page.title}}</a>
       </div>
     </header>
 

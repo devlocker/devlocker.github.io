@@ -7,9 +7,9 @@ author: patrick
 
 Is your Rails app starting to feel sluggish when running common start up
 commands like `server`, `console` and `rake`?  Lets take a look at debugging
-rails apps that take a long time to boot.
+rails applications that take a long time to boot.
 
-Pretty much all of the pain is going to come from the Gemfile and anything in
+Most of the pain is going to come from the Gemfile and anything in
 `config/initialziers`. Large Gemfiles and long lists of initializers add to the
 time it takes for Rails to boot because Rails has to load all of those files and
 run any setup code. There are a few options to diagnose which Gems and
@@ -18,9 +18,9 @@ initializers are more costly than others.
 ## Benchmarking Boot Time
 
 Before we start trying to improve the boot time of our application, we need some
-benchmarks to measure any improvements against. For this, going simple should be
-sufficient enough. Lets use the `rake environment` task - this just loads the
-Rails environment and then exits. We can time it with
+benchmarks to measure any improvements against.  Lets use the `rake environment`
+task as the base for our benchmark - this just loads the Rails environment and
+then exits. We can time it with:
 
 {% highlight text %}
 $ time bundle exec rake environment
@@ -60,7 +60,7 @@ end
 This wraps the call to `super` - the actual `require` method - in a call to
 `Benchmark#realtime` which returns a float of the total time the code
 block took to execute. We add a conditional to print the time and file name if
-the file takes over a 100ms to load. To get the output sorted simply pipe to
+the file takes over 100ms to load. To get the output sorted simply pipe to
 `sort`
 
 
@@ -141,11 +141,12 @@ Now that we know whats slow, there are a few options for dealing with slowness.
 
 ## Update Gems
 
-The easier, believe it or not, is to simply update to the latest version of the
-gem. I have run into several instances where I was running an older version that
-had a dependency on an old version of a slow loading gem (like nokogiri). In the
-latest stable version that dependency was removed, and I was able to shave off
-over a second of boot time by doing a simple `bundle update gem_name`.
+The easiest way, believe it or not, is to simply update to the latest version of
+a slow loading gem. I have run into several instances where I was running an
+older version that had a dependency on an old version of a slow loading gem
+(like nokogiri). In the latest stable version that dependency was removed, and
+I was able to shave off over a second of boot time in several different
+applications by doing a simple `bundle update gem_name`.
 
 ## require: false
 
@@ -160,7 +161,7 @@ file.
 
 If you look at the [Discourse
 Gemfile](https://github.com/discourse/discourse/blob/master/Gemfile) you will
-see that very many of the Gem declarations tag on a `require: false`. That is
+see that many of the Gem declarations tag on a `require: false`. That is
 what helps Discource to boot so quickly despite having 93 gem dependencies.
 
 ## Rails inheritance in lib/

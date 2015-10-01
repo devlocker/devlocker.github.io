@@ -6,11 +6,11 @@ author: patrick
 ---
 
 Is your Rails app starting to feel sluggish when running common start up
-commands like `server`, `console` and `rake`?  Lets take a look at debugging
+commands like `server`, `console` and `rake`?  Let's take a look at debugging
 rails applications that take a long time to boot.
 
 Most of the pain is going to come from the Gemfile and anything in
-`config/initialziers`. Large Gemfiles and long lists of initializers add to the
+`config/initializers`. Large Gemfiles and long lists of initializers add to the
 time it takes for Rails to boot because Rails has to load all of those files and
 run any setup code. There are a few options to diagnose which Gems and
 initializers are more costly than others.
@@ -18,7 +18,7 @@ initializers are more costly than others.
 ## Benchmarking Boot Time
 
 Before we start trying to improve the boot time of our application, we need some
-benchmarks to measure any improvements against.  Lets use the `rake environment`
+baselines to measure any improvements against.  Let's use the `rake environment`
 task as the base for our benchmark - this just loads the Rails environment and
 then exits. We can time it with:
 
@@ -36,7 +36,7 @@ Discourse, a 4 second boot time is very good.
 
 
 ## Profiling
-We'll look into a few ways to profile whats slow and whats fast. Lets have some
+We'll look into a few ways to profile what's slow and what's fast. Let's have some
 fun and monkey patch `require`. Open up `config/boot.rb` and paste in:
 
 {% highlight ruby %}
@@ -61,7 +61,7 @@ This wraps the call to `super` - the actual `require` method - in a call to
 `Benchmark#realtime` which returns a float of the total time the code
 block took to execute. We add a conditional to print the time and file name if
 the file takes over 100ms to load. To get the output sorted simply pipe to
-`sort`
+`sort`.
 
 
 {% highlight text %}
@@ -137,7 +137,7 @@ Slow requires:
 {% endhighlight %}
 
 # Remedies
-Now that we know whats slow, there are a few options for dealing with slowness.
+Now that we know what's slow, there are a few options for dealing with slowness.
 
 ## Update Gems
 
@@ -154,7 +154,7 @@ By default, any Gem listed in the `Gemfile` gets loaded when Rails starts. This
 means boot time usually grows with Gemfile size. However, it is rarely the case
 that you need a particular gem to be loaded and available everywhere.
 
-If you only need classes / functions from a gem in a handful of files it is much
+If you only need classes / functions from a gem in a handful of files, it is much
 more performant to add `require: false` to the Gem declaration. Then, in any
 file(s) you need access to that gem, add a `require gem_name` to the top of the
 file.

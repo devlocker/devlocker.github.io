@@ -1,0 +1,16 @@
+---
+layout: default
+title: Matt's Posts
+---
+<section class="home">
+<h1>Posts by Matt</h1>
+
+<section class="posts">
+  {% assign posts = site.posts | where:"author","matt" %}
+  {% for post in posts %}
+  <div class="post">
+    <small>{{ post.date | date: "%-d %B, %Y" }} <span class="cat {{post.category}}">{{ post.category }}</span></small>
+    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+  </div>
+  {% endfor %}
+</section>

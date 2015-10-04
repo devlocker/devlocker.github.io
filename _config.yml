@@ -5,10 +5,14 @@ authors:
   patrick:
     display_name: Patrick Koperwas
     description: Web developer based in Seattle. Working mostly with Rails / Javascript.  Loves donuts, animated gifs, Vim and wearing slippers while working.
+    short_name: patrick
   matt:
     display_name: Matt Casper
     description: Obssessed with running, coffee, and software performance. Lives in San Diego, CA. Avid Vim user.
+    short_name: matt
   hinrichs:
     display_name: Michael Hinrichs
+    short_name: hinrichs
   stock:
     display_name: Michael Stock
+    short_name: stock

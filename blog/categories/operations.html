@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Matt's Posts
+title: Operations Posts
 ---
 <section class="home">
-<h1>Posts by Matt</h1>
+<h1>Posts about Operations</h1>
 
 <section class="posts">
-  {% assign posts = site.posts | where:"author","matt" %}
+  {% assign posts = site.posts | where:"category","operations" %}
   {% for post in posts %}
   <div class="post">
     <small>

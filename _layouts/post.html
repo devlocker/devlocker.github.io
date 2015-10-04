@@ -8,7 +8,7 @@ layout: default
   <header>
   <h1 class="{{ page.category }}">{{ page.title }}</h1>
     <div class="date">
-      Posted on {{ page.date | date_to_string }} by {{ author.display_name }}
+      Posted on {{ page.date | date_to_string }} by <a href="/blog/authors/{{ author.short_name }}.html">{{ author.display_name }}</a>
     </div>
   </header>
 
@@ -19,5 +19,8 @@ layout: default
     <p>
       {{ author.description }}
     </p>
+    <p>
+      <a href="/blog/authors/{{ author.short_name }}.html">See more posts from this author</a>
+    <p>
   </footer>
 </article>

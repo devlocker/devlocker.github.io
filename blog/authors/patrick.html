@@ -1,12 +1,13 @@
 ---
 layout: default
-title: DevLocker Blog
+title: Patrick's Posts
 ---
 <section class="home">
-<h1>Latest Posts</h1>
+<h1>Posts by Patrick</h1>
 
 <section class="posts">
-  {% for post in site.posts %}
+  {% assign posts = site.posts | where:"author","patrick" %}
+  {% for post in posts %}
   <div class="post">
     <small>
       {{ post.date | date: "%-d %B, %Y" }}

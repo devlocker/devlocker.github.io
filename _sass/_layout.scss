@@ -1,0 +1,46 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: $base-font-family;
+  -webkit-font-smoothing: antialiased;
+  color: $base-font-color;
+}
+
+html {
+  background-color: #15181a;
+}
+
+.page-content {
+  width: 560px;
+  margin: 328px auto;
+
+  @media(max-width: 560px) {
+    width: 100%;
+    padding: 0 32px;
+  }
+}
+.homepage-header {
+}
+
+.tagline, .links {
+  font-family: $monospace-font-family;
+  margin-top: 32px;
+  color: #d9d9d9;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.links {
+  a {
+    color: #00ff23;
+    margin-right: 32px;
+
+    &:hover {
+      background-color: #5e4580;
+      color: #d9d9d9;
+      text-decoration: none;
+    }
+  }
+}

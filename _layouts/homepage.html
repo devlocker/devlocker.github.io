@@ -2,7 +2,17 @@
 <html>
   {% include head.html %}
   <body>
-    <div class="page-content">
+    <header class="header">
+      <div class="header__content">
+        <img src="/images/devlocker-logo.svg" height=18 />
+
+        <nav>
+          <a href="/blog">Blog</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="homepage-body">
       {{ content }}
     </div>
 

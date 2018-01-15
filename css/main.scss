@@ -1,41 +1,42 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
 ---
 @charset "utf-8";
 
-$base-font-family: "minion-pro", serif;
-$base-font-size:   16px;
-$base-font-weight: 400;
-$base-font-color: #333;
+$red: #ff4848;
+$purple: #513048;
+$blue: #2a7ae2;
+$aqua: #2ca782;
 
+$base-font-family: "brother-1816", sans-serif;
+$base-font-size: 14px;
+$base-font-weight: 400;
+$base-font-color: #111;
+
+$headings-font-family: georgia, serif;
 $monospace-font-family: "inconsolata", monospace;
 
-$small-font-size:  $base-font-size * 0.875;
+$small-font-size: $base-font-size * 0.875;
 $base-line-height: 1.5;
 
-$spacing-unit:     32px;
+$spacing-unit: 32px;
+$spacing-1x: 4px;
+$spacing-2x: 8px;
+$spacing-3x: 16px;
+$spacing-4x: 32px;
 
-$text-color:       #111;
-$background-color: #fff;
-$brand-color:      #2a7ae2;
+$text-color: #44440F;
+$background-color: #f6f6f2;
+$brand-color: #2a7ae2;
 
-$red:              #ff4848;
-$purple:           #84657b;
-$blue:             #2a7ae2;
+$border: 1px solid #cececa;
 
-$grey-color:       #828282;
+$grey-color: #111;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
 $content-width:    800px;
+$site-width: 660px;
 
-// Use media queries like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
 @mixin media-query($device) {
     @media screen and (max-width: $device) {
         @content;
@@ -43,8 +44,8 @@ $content-width:    800px;
 }
 
 // Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "base",
-        "layout",
-        "syntax-highlighting"
-;
+@import "base";
+@import "layout";
+@import "syntax-highlighting";
+
+@import "homepage";

@@ -1,35 +1,105 @@
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
 html, body {
-  font-family: $base-font-family;
   -webkit-font-smoothing: antialiased;
-  color: $base-font-color;
-  font-size: $base-font-size;
-}
-
-html {
   background-color: $background-color;
-  line-height: 28px;
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
 }
 
 .header {
+  border-bottom: 4px solid $purple-2;
+
   .header__content {
-    align-items: center;
     display: flex;
-    margin: 0 auto;
+    margin-left: $spacing-5x;
+    padding: $spacing-3x;
     width: $site-width;
-    padding: $spacing-4x 0 $spacing-3x 0;
-    border-bottom: 1px solid $red;
+
+    @media(max-width: 760px) {
+      margin: 0;
+      width: 100%;
+    }
+  }
+}
+
+.homepage-footer {
+  border-top: $border;
+  font-family: $monospace-font-family;
+  font-size: $small-font-size;
+
+  .footer__content {
+    opacity: 0.4;
+    width: $site-width;
+    margin-left: $spacing-6x;
+    padding: $spacing-3x 0;
+
+    @media(max-width: 760px) {
+      width: 100%;
+      margin: 0;
+      padding: $spacing-3x;
+    }
   }
 
-  nav {
-    margin-left: auto;
+  a {
+    padding: $spacing-2x;
+    border: none;
+  }
 
-    a {
-      color: $base-font-color;
-      margin-left: $spacing-2x;
+  .copyright {
+    float: right;
+  }
+}
+
+.homepage-body {
+  margin: $spacing-6x;
+  width: $site-width;
+
+  @media(max-width: 760px) {
+    margin: $spacing-3x 0;
+    padding: $spacing-3x;
+    width: 100%;
+  }
+}
+
+.homepage-header {
+  margin-bottom: $spacing-5x;
+
+  .muted {
+    color: #535555;
+    font-weight: normal;
+  }
+}
+
+.offerings-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .offering {
+    display: flex;
+    height: 145px;
+    margin: 1% 0;
+    min-width: 49%;
+    width: 49%;
+
+    @media(max-width: 760px) {
+      height: inherit;
+      margin-bottom: $spacing-4x;
+      width: 100%;
+    }
+
+
+    .offering-image {
+      margin-right: $spacing-2x;
+      min-width: 32px;
+      width: 32px;
     }
   }
 }

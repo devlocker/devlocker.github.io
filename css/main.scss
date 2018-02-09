@@ -2,39 +2,34 @@
 ---
 @charset "utf-8";
 
-$red: #ff4848;
-$purple: #513048;
-$blue: #2a7ae2;
-$aqua: #2ca782;
+$purple-1: #bd36de;
+$purple-2: #a0aced;
 
-$base-font-family: "brother-1816", sans-serif;
-$base-font-size: 14px;
+$base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$base-font-size: 16px;
 $base-font-weight: 400;
 $base-font-color: #111;
 
-$headings-font-family: georgia, serif;
-$monospace-font-family: "inconsolata", monospace;
+$headings-font-family: $base-font-family;
+$monospace-font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,monospace;
 
-$small-font-size: $base-font-size * 0.875;
-$base-line-height: 1.5;
+$small-font-size: $base-font-size * 0.775;
+$base-line-height: 1.6;
 
-$spacing-unit: 32px;
 $spacing-1x: 4px;
 $spacing-2x: 8px;
 $spacing-3x: 16px;
 $spacing-4x: 32px;
+$spacing-5x: 64px;
+$spacing-6x: 96px;
 
-$text-color: #44440F;
-$background-color: #f6f6f2;
+$background-color: #fff;
 $brand-color: #2a7ae2;
 
-$border: 1px solid #cececa;
+$border: 1px solid #dfdddd;
+$link-color: $purple-1;
+$link-underline: $purple-2;
 
-$grey-color: #111;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
-
-$content-width:    800px;
 $site-width: 660px;
 
 @mixin media-query($device) {
@@ -46,6 +41,3 @@ $site-width: 660px;
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import "base";
 @import "layout";
-@import "syntax-highlighting";
-
-@import "homepage";

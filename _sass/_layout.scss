@@ -14,13 +14,17 @@ html, body {
 }
 
 .header {
-  border-bottom: 4px solid $purple-2;
+  background-color: $lightest-gray;
+  border-top: 5px solid $purple-2;
+  border-bottom: 1px solid #ddd;
 
   .header__content {
     display: flex;
-    margin-left: $spacing-5x;
-    padding: $spacing-3x;
+    margin-left: $spacing-6x;
+    padding: $spacing-3x 0;
     width: $site-width;
+    height: 64px;
+    align-items: center;
 
     @media(max-width: 760px) {
       margin: 0;

@@ -29,6 +29,7 @@ html, body {
     @media(max-width: 760px) {
       margin: 0;
       width: 100%;
+      padding: $spacing-3x;
     }
   }
 }
